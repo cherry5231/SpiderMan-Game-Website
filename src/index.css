@@ -3813,4 +3813,395 @@ a {
     text-align: center;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* =========================================================
+   GAME / MAP
+========================================================= */
+
+.map-container {
+    position: relative;
+
+    width: min(1200px, 94vw);
+
+    /* Keep the original map ratio */
+    aspect-ratio: 1200 / 630;
+
+    height: auto;
+
+    margin: 30px auto;
+
+    overflow: hidden;
+
+    background: #111;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+
+    touch-action: none;
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* MAP */
+
+.map-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* PLAYER */
+
+.player-image {
+    position: absolute;
+
+    width: clamp(16px, 2vw, 25px);
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 10;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* DANGER / ENEMY */
+
+.danger-image {
+    position: absolute;
+
+    width: clamp(25px, 3vw, 40px);
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 5;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   TOUCH CONTROLS
+========================================================= */
+
+.touch-controls {
+    position: absolute;
+
+    z-index: 100;
+
+    bottom: 18px;
+    left: 18px;
+
+    width: 150px;
+    height: 150px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 50px);
+
+    grid-template-rows:
+        repeat(3, 50px);
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    touch-action: none;
+
+    /* Don't let buttons get dragged */
+    -webkit-touch-callout: none;
+}
+
+
+/* BUTTON */
+
+.touch-button {
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    border:
+        2px solid rgba(255,255,255,0.7);
+
+    border-radius: 12px;
+
+    background:
+        rgba(0,0,0,0.78);
+
+    color: white;
+
+    font-size: 21px;
+    font-weight: 900;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        transform 0.08s ease,
+        background 0.08s ease;
+}
+
+
+.touch-button:active {
+    background: #e62429;
+
+    transform:
+        scale(0.88);
+}
+
+
+/* UP */
+
+.touch-button.up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* LEFT */
+
+.touch-button.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+/* CENTER */
+
+.touch-button.center {
+    grid-column: 2;
+    grid-row: 2;
+
+    background:
+        rgba(230,36,41,0.85);
+
+    cursor: default;
+}
+
+
+/* RIGHT */
+
+.touch-button.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+
+/* DOWN */
+
+.touch-button.down {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-box {
+    position: absolute;
+
+    z-index: 200;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: min(400px, 82%);
+
+    max-height: 80%;
+
+    overflow-y: auto;
+
+    padding: 25px;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    border:
+        4px solid black;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.7);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .map-container {
+
+        width: 96vw;
+
+        margin:
+            15px auto;
+
+        border-radius: 12px;
+
+        /*
+         * VERY IMPORTANT:
+         * Don't give this a fixed height.
+         */
+        height: auto;
+
+        aspect-ratio: 1200 / 630;
+    }
+
+
+    .touch-controls {
+
+        width: 126px;
+        height: 126px;
+
+        left: 10px;
+        bottom: 10px;
+
+        grid-template-columns:
+            repeat(3, 42px);
+
+        grid-template-rows:
+            repeat(3, 42px);
+    }
+
+
+    .touch-button {
+
+        width: 42px;
+        height: 42px;
+
+        border-radius: 10px;
+
+        font-size: 18px;
+    }
+
+
+    .quiz-box {
+
+        width: 82%;
+
+        padding: 18px;
+
+        border-width: 3px;
+
+        border-radius: 12px;
+    }
+
+
+    .quiz-box h2 {
+
+        font-size: 20px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .quiz-box button {
+
+        padding: 10px;
+
+        margin: 7px 0;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .map-container {
+
+        width: 98vw;
+
+        margin:
+            10px auto;
+    }
+
+
+    .touch-controls {
+
+        transform:
+            scale(0.85);
+
+        transform-origin:
+            bottom left;
+    }
+
+
+    .quiz-box {
+
+        width: 86%;
+
+        padding: 14px;
+    }
+
+}
+
 }
