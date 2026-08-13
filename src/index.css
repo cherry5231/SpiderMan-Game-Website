@@ -4174,34 +4174,142 @@ a {
    VERY SMALL PHONES
 ========================================================= */
 
-@media (max-width: 380px) {
+/* =========================================================
+   DESKTOP GAME MODE
+   MOBILE ALSO USES THE DESKTOP-SIZED GAME
+========================================================= */
+
+.map-container {
+    position: relative;
+
+    width: 1200px;
+    height: 630px;
+
+    margin: 30px auto;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    background: #111;
+
+    touch-action: none;
+}
+
+
+/* MAP */
+
+.map-image {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 1200px;
+    height: 630px;
+
+    object-fit: cover;
+
+    display: block;
+
+    pointer-events: none;
+}
+
+
+/* PLAYER */
+
+.player-image {
+    position: absolute;
+
+    width: 20px;
+    height: 45px;
+
+    object-fit: contain;
+
+    z-index: 10;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* ENEMY */
+
+.danger-image {
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    object-fit: contain;
+
+    z-index: 5;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE = DESKTOP GAME
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /*
+       IMPORTANT:
+
+       Do NOT resize the actual game.
+
+       The game remains:
+       1200 x 630
+
+       The phone simply becomes a window
+       looking at that game.
+    */
+
+    body {
+        overflow-x: auto;
+    }
+
 
     .map-container {
+        width: 1200px;
+        min-width: 1200px;
 
-        width: 98vw;
+        height: 630px;
+        min-height: 630px;
 
-        margin:
-            10px auto;
+        margin: 15px 0;
+
+        /*
+           Prevent browser from trying
+           to resize the game.
+        */
+
+        transform: none;
     }
 
 
-    .touch-controls {
-
-        transform:
-            scale(0.85);
-
-        transform-origin:
-            bottom left;
+    .map-image {
+        width: 1200px;
+        height: 630px;
     }
 
 
-    .quiz-box {
-
-        width: 86%;
-
-        padding: 14px;
+    .player-image {
+        width: 20px;
+        height: 45px;
     }
 
-}
+
+    .danger-image {
+        width: 40px;
+        height: 40px;
+    }
 
 }
