@@ -1,16 +1,103 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# Spider-Man Game Website
 
-Currently, two official plugins are available:
+A Spider-Man themed gaming website built with React and Vite. The project focuses on creating an interactive, modern, and visually engaging experience inspired by the Spider-Man game universe.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Website
 
-## React Compiler
+https://spider-man-game-website.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Pages
 
-## Expanding the Oxlint configuration
+### Home
+The landing page introduces the website with a Spider-Man themed design and provides navigation to the main sections.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Games
+The Games page showcases Spider-Man games with relevant information and visuals, allowing users to explore different titles.
+
+### Movies
+The Movies page focuses heavily on UI and visual presentation. Movie posters, titles, information, and content are arranged in a clean and attractive layout.
+
+Special attention was given to creating a good movie-page UI by using a Spider-Man inspired color scheme, clean card layouts, proper spacing, typography, buttons, and visual hierarchy. The movie section is designed to feel like a modern entertainment platform rather than a simple information page.
+
+The responsive layout also helps maintain a consistent and engaging experience across different screen sizes.
+
+### Characters
+The Characters page presents Spider-Man characters and their details, giving users an overview of the heroes and villains featured in the Spider-Man universe.
+
+### About
+The About page provides information about the website and its purpose, along with details about the project.
+
+### Contact
+The Contact page provides a way for users to get in touch or interact with the website.
+
+## Features
+
+- Spider-Man themed user interface
+- Modern and responsive design
+- Interactive navigation
+- Visually focused Movie page
+- Movie cards with posters and information
+- Game and character information
+- Clean layouts with consistent spacing and typography
+- Responsive design for different screen sizes
+- Modern entertainment-style UI
+- React-based frontend
+- Fast development and build setup using Vite
+
+## Tech Stack
+
+- React
+- Vite
+- JavaScript
+- HTML
+- CSS
+
+## Deployment
+
+The website is deployed using Vercel.
+
+## Project Structure
+
+```text
+SpiderMan-Game-Website/
+├── public/
+├── src/
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+````
+
+ ## Getting Started
+
+ Clone the repository:
+
+```
+git clone https://github.com/cherry5231/SpiderMan-Game-Website.git
+```
+
+ Navigate to the project:
+
+```
+cd SpiderMan-Game-Website
+```
+
+ Install dependencies:
+
+```
+npm install
+```
+
+ Start the development server:
+
+```
+npm run dev
+```
+
+ The project will then be available through the local Vite development server.
+
+ ## Author
+
+ Developed by cherry5231.
+
